@@ -17,6 +17,16 @@
                 android:layout_weight="1"
                 android:text="Add"
                 android:id="@+id/buttonadd"/>
+        <Button android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Sort"
+                android:id="@+id/buttonsort"/>
+        <Button android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Del"
+                android:id="@+id/buttondel"/>
     </LinearLayout>
     <ScrollView android:layout_width="match_parent"
                 android:layout_height="wrap_content">
