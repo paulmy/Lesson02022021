@@ -3,15 +3,15 @@
               android:layout_height="match_parent"
               android:orientation="vertical"
               xmlns:android="http://schemas.android.com/apk/res/android">
+    <EditText android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:hint="Введите текст"
+              android:id="@+id/edittext"
+    />
     <LinearLayout android:layout_width="match_parent"
                   android:layout_height="wrap_content"
                   android:orientation="horizontal">
-        <EditText android:layout_width="match_parent"
-                  android:layout_height="wrap_content"
-                  android:hint="Введите текст"
-                  android:layout_weight="1"
-                  android:id="@+id/edittext"
-        />
+
         <Button android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -27,6 +27,22 @@
                 android:layout_weight="1"
                 android:text="Del"
                 android:id="@+id/buttondel"/>
+        <Button android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Search"
+                android:id="@+id/buttonsearch"/>
+    </LinearLayout>
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="horizontal">
+
+        <Button android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Next"
+                android:id="@+id/buttonnext"/>
+
     </LinearLayout>
     <ScrollView android:layout_width="match_parent"
                 android:layout_height="wrap_content">
