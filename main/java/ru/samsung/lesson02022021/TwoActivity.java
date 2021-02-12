@@ -8,15 +8,16 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 
 public class TwoActivity extends Activity {
     final String[] catNamesArray = new String[]{"Рыжик", "Барсик", "Мурзик", "Мурка", "Васька", "Томасина", "Бобик", "Кристина", "Пушок", "Дымка", "Кузя", "Китти", "Барбос", "Масяня", "Симба"};
     TextView textView1;
     EditText inputword;
-    Button btnsearch;
+    Button btnsearch, btnsort;
+    PersonComparator pcomp = new PersonComparator();
+    TreeSet<Person> listPerson = new TreeSet<>(pcomp);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +26,9 @@ public class TwoActivity extends Activity {
         textView1 = findViewById(R.id.textview1);
         inputword = findViewById(R.id.inputword);
         btnsearch = findViewById(R.id.btnsearch);
+        btnsort = findViewById(R.id.btnsort);
+        addPerson();
+
 
         //textView1.setText(OutputCat(catNamesArray));
         btnsearch.setOnClickListener(new View.OnClickListener() {
@@ -41,6 +45,15 @@ public class TwoActivity extends Activity {
                 }
 
 
+            }
+        });
+        btnsort.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                textView1.setText("");
+                for (Person list : listPerson) {
+                    textView1.append(list + "\n");
+                }
             }
         });
 
@@ -64,4 +77,11 @@ public class TwoActivity extends Activity {
         }
         return res;
     }
+
+    void addPerson() {
+        for (String s : catNamesArray) {
+            listPerson.add(new Person(s));
+        }
+    }
+
 }
